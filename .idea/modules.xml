@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="firebase-phone-verification-for-android/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/firebase-phone-verification-for-android.iml" filepath="$PROJECT_DIR$/.idea/firebase-phone-verification-for-android.iml" group="firebase-phone-verification-for-android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="new_SFF/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/new_SFF.iml" filepath="$PROJECT_DIR$/.idea/modules/new_SFF.iml" group="new_SFF" />
     </modules>
   </component>
 </project>
