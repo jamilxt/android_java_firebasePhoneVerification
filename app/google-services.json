@@ -1,77 +1,47 @@
 {
   "project_info": {
-    "project_number": "324078596878",
-    "firebase_url": "https://kbill-android.firebaseio.com",
-    "project_id": "kbill-android",
-    "storage_bucket": "kbill-android.appspot.com"
+    "project_number": "898091311891",
+    "firebase_url": "https://sff-shaj.firebaseio.com",
+    "project_id": "sff-shaj",
+    "storage_bucket": "sff-shaj.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:324078596878:android:5a17512dbb3fb52ca51d5f",
+        "mobilesdk_app_id": "1:898091311891:android:b5f81ca32c55197ec3b0e6",
         "android_client_info": {
-          "package_name": "com.example.firebasephoneverification"
+          "package_name": "com.decimalab.sff"
         }
       },
       "oauth_client": [
         {
-          "client_id": "324078596878-ph99q4oc0ajc4f3k464ri1qjpa0k8uev.apps.googleusercontent.com",
+          "client_id": "898091311891-7r5c5etc8c3vlp9hh23a1249rvn8v4lr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.firebasephoneverification",
-            "certificate_hash": "721b80cfe5ba771ec554d01b12e1e4cf1af048c1"
+            "package_name": "com.decimalab.sff",
+            "certificate_hash": "517a4bfee5e5fccfe677424fe2ce1af87911c88b"
           }
         },
         {
-          "client_id": "324078596878-cn3hnnt7kts0noc1dfupbhro9n4mso50.apps.googleusercontent.com",
+          "client_id": "898091311891-o5fkqbi5er1v88uipps8q30mp89oacvc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBeRxrkgJBLz6jtqD8FUTxJlEsClto0kHU"
+          "current_key": "AIzaSyDQ1xZZHXTaAmWqflrJjrGqvD9dQwg8Od8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "324078596878-cn3hnnt7kts0noc1dfupbhro9n4mso50.apps.googleusercontent.com",
+              "client_id": "898091311891-o5fkqbi5er1v88uipps8q30mp89oacvc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:324078596878:android:b495fb356a70a08e",
-        "android_client_info": {
-          "package_name": "com.rotatet.k_bill"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "324078596878-cn3hnnt7kts0noc1dfupbhro9n4mso50.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBeRxrkgJBLz6jtqD8FUTxJlEsClto0kHU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "324078596878-cn3hnnt7kts0noc1dfupbhro9n4mso50.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-8409493502089674~9444034895"
     }
   ],
   "configuration_version": "1"
