@@ -17,6 +17,8 @@ public class EnterNumberActivity extends AppCompatActivity {
     TextInputEditText editTextCountryCode, editTextPhone;
     AppCompatButton buttonContinue;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

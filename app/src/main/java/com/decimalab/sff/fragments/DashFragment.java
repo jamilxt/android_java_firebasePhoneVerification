@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.decimalab.sff.R;
 import com.decimalab.sff.phoneotp.EnterNumberActivity;
+import com.decimalab.sff.utils.SharedPref;
 import com.google.firebase.auth.FirebaseAuth;
 
 import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
@@ -26,6 +27,8 @@ public class DashFragment extends Fragment {
     String phoneNumber;
     TextView mobileNumber;
     Button btnLogOut;
+
+    SharedPref sharedPref;
 
     @Nullable
     @Override
@@ -61,6 +64,7 @@ public class DashFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         // get saved phone number
+
         SharedPreferences prefs = getActivity().getSharedPreferences("USER_PREF", Context.MODE_PRIVATE);
         phoneNumber = prefs.getString("phoneNumber", NULL);
 

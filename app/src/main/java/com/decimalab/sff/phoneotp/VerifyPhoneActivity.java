@@ -15,6 +15,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.decimalab.sff.HomeActivity;
 import com.decimalab.sff.R;
+import com.decimalab.sff.utils.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
@@ -34,6 +35,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     TextInputEditText editText;
     AppCompatButton buttonSignIn;
     AppCompatButton buttonResend;
+
+    SharedPref sharedPref;
+
     private String verificationId;
     private FirebaseAuth mAuth;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
@@ -109,11 +113,10 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         sendVerificationCode(phoneNumber);
 
         // save phone number
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("USER_PREF",
-                Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("phoneNumber", phoneNumber);
-        editor.apply();
+
+        sharedPref = new SharedPref(this);
+        sharedPref.saveNumber(phoneNumber);
+
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
