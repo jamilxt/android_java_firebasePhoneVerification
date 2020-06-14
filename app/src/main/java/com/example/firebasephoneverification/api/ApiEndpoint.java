@@ -3,6 +3,7 @@ package com.example.firebasephoneverification.api;
 import com.example.firebasephoneverification.response.BaseResponse;
 import com.example.firebasephoneverification.response.CollegeResponse;
 import com.example.firebasephoneverification.response.DivisionResponse;
+import com.example.firebasephoneverification.response.UserResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -10,7 +11,6 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiEndpoint {
@@ -23,4 +23,7 @@ public interface ApiEndpoint {
 
     @GET("colleges")
     Observable<CollegeResponse> getCollegeListByDivisionId(@Header("Authorization") String token, @Query("division_id") int division_id);
+
+    @GET("user")
+    Observable<UserResponse> getLoggedInUserInfo(@Header("Authorization") String token);
 }
