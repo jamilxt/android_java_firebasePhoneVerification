@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification;
+package com.example.firebasephoneverification.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firebasephoneverification.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
