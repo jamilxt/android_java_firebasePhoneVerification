@@ -18,9 +18,10 @@ import com.example.firebasephoneverification.api.ApiEndpoint;
 import com.example.firebasephoneverification.api.RetrofitInstance;
 import com.example.firebasephoneverification.model.College;
 import com.example.firebasephoneverification.model.Division;
+import com.example.firebasephoneverification.request.StudentRequest;
 import com.example.firebasephoneverification.response.BaseResponse;
 import com.example.firebasephoneverification.response.DivisionResponse;
-import com.example.firebasephoneverification.response.UserResponse;
+import com.example.firebasephoneverification.response.StudentResponse;
 import com.example.firebasephoneverification.util.Constants;
 import com.google.gson.Gson;
 import com.yuyh.jsonviewer.library.JsonRecyclerView;
@@ -251,37 +252,85 @@ public class TestActivity extends AppCompatActivity {
         API.getLoggedInUserInfo("Bearer " + token)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<UserResponse>() {
+                .subscribe(new Observer<StudentResponse>() {
                     @Override
                     public void onSubscribe(Disposable d) {
                         Toast.makeText(TestActivity.this, "Processing...", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onNext(UserResponse userResponse) {
-                        Log.e("response", userResponse.toString());
-                        jsonRecyclerView.bindJson(gson.toJson(userResponse));
+                    public void onNext(StudentResponse studentResponse) {
+                        Log.e("response", studentResponse.toString());
+                        jsonRecyclerView.bindJson(gson.toJson(studentResponse));
 
-                        if (userResponse.getCode() == 200) {
-                            et_name.setText(userResponse.getData().getName());
-                            et_phone.setText(userResponse.getData().getPhone());
-                            et_picture.setText(userResponse.getData().getPicture());
-                            et_roll.setText(userResponse.getData().getRoll());
-                            et_reg.setText(userResponse.getData().getReg());
-                            et_board.setText(userResponse.getData().getBoard());
-                            et_passing_year.setText(String.valueOf(userResponse.getData().getPassingYear()));
-                            et_group.setText(String.valueOf(userResponse.getData().getGroup()));
-                            et_quotes.setText(String.valueOf(userResponse.getData().getQuotes()));
-                            et_payment_type.setText(String.valueOf(userResponse.getData().getPaymentType()));
+                        if (studentResponse.getCode() == 200) {
+                            et_name.setText(studentResponse.getData().getName());
+                            et_phone.setText(studentResponse.getData().getPhone());
+                            et_picture.setText(studentResponse.getData().getPicture());
+                            et_roll.setText(studentResponse.getData().getRoll());
+                            et_reg.setText(studentResponse.getData().getReg());
+                            et_board.setText(studentResponse.getData().getBoard());
+                            et_passing_year.setText(String.valueOf(studentResponse.getData().getPassingYear()));
+                            et_group.setText(String.valueOf(studentResponse.getData().getGroup()));
+                            et_quotes.setText(String.valueOf(studentResponse.getData().getQuotes()));
+                            et_payment_type.setText(String.valueOf(studentResponse.getData().getPaymentType()));
 
-                            et_txr_id.setText(String.valueOf(userResponse.getData().getTxrId()));
-                            et_amount.setText(String.valueOf(userResponse.getData().getAmount()));
+                            et_txr_id.setText(String.valueOf(studentResponse.getData().getTxrId()));
+                            et_amount.setText(String.valueOf(studentResponse.getData().getAmount()));
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         Toast.makeText(TestActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Toast.makeText(TestActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    public void updateLoggedInUserInfo(View view) {
+
+        StudentRequest studentRequest = new StudentRequest();
+        studentRequest.setName(et_name.getText().toString());
+        studentRequest.setPhone(et_phone.getText().toString());
+        studentRequest.setPicture(et_picture.getText().toString());
+        studentRequest.setRoll(et_roll.getText().toString());
+        studentRequest.setReg(et_reg.getText().toString());
+        studentRequest.setBoard(et_board.getText().toString());
+        studentRequest.setPassingYear(Long.valueOf(et_passing_year.getText().toString()));
+        studentRequest.setGroup(et_group.getText().toString());
+        studentRequest.setPaymentType(et_payment_type.getText().toString());
+        studentRequest.setTxrId(et_txr_id.getText().toString());
+        studentRequest.setAmount(et_amount.getText().toString());
+        studentRequest.setStudentColleges(selectedCollegeIdList);
+
+        API.updateLoggedInUserInfo("Bearer " + token, studentRequest)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<StudentResponse>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Toast.makeText(TestActivity.this, "Processing...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(StudentResponse studentResponse) {
+                        Log.e("response", studentResponse.toString());
+                        jsonRecyclerView.bindJson(gson.toJson(studentResponse));
+
+
+                        if (studentResponse.getCode() == 200) {
+                            Toast.makeText(TestActivity.this, "Profile Info Updated!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(TestActivity.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                     }
 
                     @Override

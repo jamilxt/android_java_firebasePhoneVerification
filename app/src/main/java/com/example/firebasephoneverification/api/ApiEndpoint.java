@@ -1,15 +1,19 @@
 package com.example.firebasephoneverification.api;
 
+import com.example.firebasephoneverification.request.StudentRequest;
 import com.example.firebasephoneverification.response.BaseResponse;
 import com.example.firebasephoneverification.response.DivisionResponse;
-import com.example.firebasephoneverification.response.UserResponse;
+import com.example.firebasephoneverification.response.StudentResponse;
 
 import io.reactivex.Observable;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface ApiEndpoint {
     @FormUrlEncoded
@@ -20,6 +24,9 @@ public interface ApiEndpoint {
     Observable<DivisionResponse> getDivisionList(@Header("Authorization") String token);
 
     @GET("user")
-    Observable<UserResponse> getLoggedInUserInfo(@Header("Authorization") String token);
+    Observable<StudentResponse> getLoggedInUserInfo(@Header("Authorization") String token);
 
+    @Headers("Content-Type: application/json")
+    @PUT("user")
+    Observable<StudentResponse> updateLoggedInUserInfo(@Header("Authorization") String token, @Body StudentRequest studentRequest);
 }

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class UserResponse {
+public class StudentResponse {
     @SerializedName("status")
     private Boolean status;
     @SerializedName("code")

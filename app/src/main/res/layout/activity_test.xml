@@ -155,6 +155,7 @@
             android:hint="amount" />
 
         <Button
+            android:onClick="updateLoggedInUserInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Update User Info" />
