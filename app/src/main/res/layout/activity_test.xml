@@ -41,20 +41,118 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="getDivisionList"
-            android:text="Get Division List" />
+            android:onClick="getDivisionWithCollegeList"
+            android:text="Get Division with College List" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="getCollegeListByDivision"
-            android:text="Get College List by Division" />
+            android:text="Get College List by Division"
+            android:visibility="gone" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="getLoggedInUserInfo"
             android:text="Get User Info" />
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="phone" />
+
+        <EditText
+            android:id="@+id/picture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="picture" />
+
+        <EditText
+            android:id="@+id/roll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="roll" />
+
+        <EditText
+            android:id="@+id/reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="reg" />
+
+
+        <EditText
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="board" />
+
+        <EditText
+            android:id="@+id/passing_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="passing_year" />
+
+
+        <EditText
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="group" />
+
+        <EditText
+            android:id="@+id/quotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="quotes" />
+
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/divisions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+            android:id="@+id/colleges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/college_ids"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="college_ids"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/payment_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="payment_type" />
+
+        <EditText
+            android:id="@+id/txr_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="txr_id" />
+
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="amount" />
 
         <Button
             android:layout_width="match_parent"

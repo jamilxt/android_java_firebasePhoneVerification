@@ -22,6 +22,7 @@ public class Student {
     @SerializedName("txr_id")
     private String txrId;
     private String amount;
+    @SerializedName("colleges")
     private List<StudentCollege> studentColleges;
 
     public Long getId() {

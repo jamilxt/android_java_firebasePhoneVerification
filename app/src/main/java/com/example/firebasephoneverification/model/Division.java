@@ -1,8 +1,11 @@
 package com.example.firebasephoneverification.model;
 
+import java.util.List;
+
 public class Division {
     private Long id;
     private String name;
+    private List<College> colleges;
 
     public Long getId() {
         return id;
@@ -20,11 +23,20 @@ public class Division {
         this.name = name;
     }
 
+    public List<College> getColleges() {
+        return colleges;
+    }
+
+    public void setColleges(List<College> colleges) {
+        this.colleges = colleges;
+    }
+
     @Override
     public String toString() {
         return "Division{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", colleges=" + colleges +
                 '}';
     }
 }
