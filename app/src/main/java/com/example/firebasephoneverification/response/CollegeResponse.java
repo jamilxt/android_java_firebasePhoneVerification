@@ -1,23 +1,19 @@
 package com.example.firebasephoneverification.response;
 
-import com.example.firebasephoneverification.model.Student;
+import com.example.firebasephoneverification.model.College;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class BaseResponse {
+public class CollegeResponse {
     @SerializedName("status")
     private Boolean status;
     @SerializedName("code")
     private Long code;
-    @SerializedName("exits")
-    private Boolean exits;
     @SerializedName("message")
     private List<String> message;
-    @SerializedName("token")
-    private String token;
     @SerializedName("data")
-    private Student data;
+    private List<College> data;
 
     public Boolean getStatus() {
         return status;
@@ -35,13 +31,6 @@ public class BaseResponse {
         this.code = code;
     }
 
-    public Boolean getExits() {
-        return exits;
-    }
-
-    public void setExits(Boolean exits) {
-        this.exits = exits;
-    }
 
     public List<String> getMessage() {
         return message;
@@ -51,30 +40,21 @@ public class BaseResponse {
         this.message = message;
     }
 
-    public String getToken() {
-        return token;
-    }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Student getData() {
+    public List<College> getData() {
         return data;
     }
 
-    public void setData(Student data) {
+    public void setData(List<College> data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "BaseResponse{" +
+        return "CollegeResponse{" +
                 "status=" + status +
                 ", code=" + code +
-                ", exits=" + exits +
                 ", message=" + message +
-                ", token='" + token + '\'' +
                 ", data=" + data +
                 '}';
     }

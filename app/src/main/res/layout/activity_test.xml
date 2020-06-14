@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".LoginActivity">
+    tools:context=".TestActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,13 +17,10 @@
             android:text="Response"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/response"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
-            android:text="" />
-
+        <com.yuyh.jsonviewer.library.JsonRecyclerView
+            android:id="@+id/rv_json"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/token"
@@ -32,7 +29,8 @@
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:text="Token:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <Button
             android:layout_width="match_parent"
@@ -43,12 +41,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get Division" />
+            android:onClick="getDivisionList"
+            android:text="Get Division List" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get College by Division" />
+            android:onClick="getCollegeListByDivision"
+            android:text="Get College List by Division" />
 
         <Button
             android:layout_width="match_parent"

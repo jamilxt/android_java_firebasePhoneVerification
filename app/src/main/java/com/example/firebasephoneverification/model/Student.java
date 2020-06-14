@@ -6,73 +6,23 @@ import java.util.List;
 
 public class Student {
 
-    private String amount;
-    private String board;
-    private List<College> colleges;
-    private String group;
     private Long id;
     private String name;
-    @SerializedName("passing_year")
-    private Long passingYear;
-    @SerializedName("payment_type")
-    private String paymentType;
     private String phone;
     private String picture;
-    private String quotes;
-    private String reg;
     private String roll;
+    private String reg;
+    private String board;
+    @SerializedName("passing_year")
+    private Long passingYear;
+    private String group;
+    private String quotes;
+    @SerializedName("payment_type")
+    private String paymentType;
     @SerializedName("txr_id")
     private String txrId;
-
-
-    public Student(String amount, String board, List<College> colleges, String group, Long id, String name, Long passingYear, String paymentType, String phone, String picture, String quotes, String reg, String roll, String txrId) {
-        this.amount = amount;
-        this.board = board;
-        this.colleges = colleges;
-        this.group = group;
-        this.id = id;
-        this.name = name;
-        this.passingYear = passingYear;
-        this.paymentType = paymentType;
-        this.phone = phone;
-        this.picture = picture;
-        this.quotes = quotes;
-        this.reg = reg;
-        this.roll = roll;
-        this.txrId = txrId;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public String getBoard() {
-        return board;
-    }
-
-    public void setBoard(String board) {
-        this.board = board;
-    }
-
-    public List<College> getColleges() {
-        return colleges;
-    }
-
-    public void setColleges(List<College> colleges) {
-        this.colleges = colleges;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
-    }
+    private String amount;
+    private List<StudentCollege> studentColleges;
 
     public Long getId() {
         return id;
@@ -88,22 +38,6 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getPassingYear() {
-        return passingYear;
-    }
-
-    public void setPassingYear(Long passingYear) {
-        this.passingYear = passingYear;
-    }
-
-    public String getPaymentType() {
-        return paymentType;
-    }
-
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
     }
 
     public String getPhone() {
@@ -122,12 +56,12 @@ public class Student {
         this.picture = picture;
     }
 
-    public String getQuotes() {
-        return quotes;
+    public String getRoll() {
+        return roll;
     }
 
-    public void setQuotes(String quotes) {
-        this.quotes = quotes;
+    public void setRoll(String roll) {
+        this.roll = roll;
     }
 
     public String getReg() {
@@ -138,12 +72,44 @@ public class Student {
         this.reg = reg;
     }
 
-    public String getRoll() {
-        return roll;
+    public String getBoard() {
+        return board;
     }
 
-    public void setRoll(String roll) {
-        this.roll = roll;
+    public void setBoard(String board) {
+        this.board = board;
+    }
+
+    public Long getPassingYear() {
+        return passingYear;
+    }
+
+    public void setPassingYear(Long passingYear) {
+        this.passingYear = passingYear;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public String getQuotes() {
+        return quotes;
+    }
+
+    public void setQuotes(String quotes) {
+        this.quotes = quotes;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 
     public String getTxrId() {
@@ -154,24 +120,39 @@ public class Student {
         this.txrId = txrId;
     }
 
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public List<StudentCollege> getStudentColleges() {
+        return studentColleges;
+    }
+
+    public void setStudentColleges(List<StudentCollege> studentColleges) {
+        this.studentColleges = studentColleges;
+    }
 
     @Override
     public String toString() {
-        return "Data{" +
-                "amount='" + amount + '\'' +
-                ", board='" + board + '\'' +
-                ", colleges=" + colleges +
-                ", group='" + group + '\'' +
-                ", id=" + id +
+        return "Student{" +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", passingYear=" + passingYear +
-                ", paymentType='" + paymentType + '\'' +
                 ", phone='" + phone + '\'' +
                 ", picture='" + picture + '\'' +
-                ", quotes='" + quotes + '\'' +
-                ", reg='" + reg + '\'' +
                 ", roll='" + roll + '\'' +
+                ", reg='" + reg + '\'' +
+                ", board='" + board + '\'' +
+                ", passingYear=" + passingYear +
+                ", group='" + group + '\'' +
+                ", quotes='" + quotes + '\'' +
+                ", paymentType='" + paymentType + '\'' +
                 ", txrId='" + txrId + '\'' +
+                ", amount='" + amount + '\'' +
+                ", studentColleges=" + studentColleges +
                 '}';
     }
 }

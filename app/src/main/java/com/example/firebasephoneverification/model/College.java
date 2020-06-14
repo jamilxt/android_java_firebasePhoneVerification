@@ -1,35 +1,11 @@
 package com.example.firebasephoneverification.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-
 public class College {
-
-    @SerializedName("college_id")
-    private Long collegeId;
-    @SerializedName("college_name")
-    private String collegeName;
-    @Expose
     private Long id;
-    @SerializedName("user_id")
-    private Long userId;
-
-    public Long getCollegeId() {
-        return collegeId;
-    }
-
-    public void setCollegeId(Long collegeId) {
-        this.collegeId = collegeId;
-    }
-
-    public String getCollegeName() {
-        return collegeName;
-    }
-
-    public void setCollegeName(String collegeName) {
-        this.collegeName = collegeName;
-    }
+    private Long division_id;
+    private String division_name;
+    private String name;
+    private Long eiin_number;
 
     public Long getId() {
         return id;
@@ -39,21 +15,46 @@ public class College {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getDivision_id() {
+        return division_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setDivision_id(Long division_id) {
+        this.division_id = division_id;
+    }
+
+    public String getDivision_name() {
+        return division_name;
+    }
+
+    public void setDivision_name(String division_name) {
+        this.division_name = division_name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getEiin_number() {
+        return eiin_number;
+    }
+
+    public void setEiin_number(Long eiin_number) {
+        this.eiin_number = eiin_number;
     }
 
     @Override
     public String toString() {
         return "College{" +
-                "collegeId=" + collegeId +
-                ", collegeName='" + collegeName + '\'' +
-                ", id=" + id +
-                ", userId=" + userId +
+                "id=" + id +
+                ", division_id=" + division_id +
+                ", division_name='" + division_name + '\'' +
+                ", name='" + name + '\'' +
+                ", eiin_number=" + eiin_number +
                 '}';
     }
 }
