@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification.model;
+package com.decimalab.sff.model;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification.model;
+package com.decimalab.sff.model;
 
 import java.util.List;
 

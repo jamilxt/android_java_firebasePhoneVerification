@@ -1,6 +1,5 @@
-package com.example.firebasephoneverification.request;
+package com.decimalab.sff.request;
 
-import com.example.firebasephoneverification.model.StudentCollege;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

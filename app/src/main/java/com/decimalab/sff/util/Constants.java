@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification.util;
+package com.decimalab.sff.util;
 
 public class Constants {
     public static final String BASE_URL = "https://www.virtualbd.xyz/api/";

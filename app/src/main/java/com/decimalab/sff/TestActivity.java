@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification;
+package com.decimalab.sff;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,15 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SpinnerListener;
-import com.example.firebasephoneverification.api.ApiEndpoint;
-import com.example.firebasephoneverification.api.RetrofitInstance;
-import com.example.firebasephoneverification.model.College;
-import com.example.firebasephoneverification.model.Division;
-import com.example.firebasephoneverification.request.StudentRequest;
-import com.example.firebasephoneverification.response.BaseResponse;
-import com.example.firebasephoneverification.response.DivisionResponse;
-import com.example.firebasephoneverification.response.StudentResponse;
-import com.example.firebasephoneverification.util.Constants;
+import com.decimalab.sff.api.ApiEndpoint;
+import com.decimalab.sff.api.RetrofitInstance;
+import com.decimalab.sff.model.College;
+import com.decimalab.sff.model.Division;
+import com.decimalab.sff.request.StudentRequest;
+import com.decimalab.sff.response.BaseResponse;
+import com.decimalab.sff.response.DivisionResponse;
+import com.decimalab.sff.response.StudentResponse;
+import com.decimalab.sff.util.Constants;
 import com.google.gson.Gson;
 import com.yuyh.jsonviewer.library.JsonRecyclerView;
 

@@ -1,8 +1,6 @@
-package com.example.firebasephoneverification.api;
+package com.decimalab.sff.api;
 
-import com.example.firebasephoneverification.util.Constants;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.decimalab.sff.util.Constants;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

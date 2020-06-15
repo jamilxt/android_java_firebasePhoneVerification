@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification.model;
+package com.decimalab.sff.model;
 
 public class College {
     private Long id;

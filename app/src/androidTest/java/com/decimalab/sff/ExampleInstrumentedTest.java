@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification;
+package com.decimalab.sff;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

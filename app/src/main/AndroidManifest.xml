@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firebasephoneverification">
+    package="com.decimalab.sff">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TestActivity">
+        <activity android:name="com.decimalab.sff.TestActivity">
+
+        </activity>
+        <activity android:name="com.decimalab.sff.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -19,11 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity">
-
-        </activity>
-        <activity android:name=".ui.VerifyPhoneActivity" />
-        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name="com.decimalab.sff.ui.VerifyPhoneActivity" />
+        <activity android:name="com.decimalab.sff.ui.ProfileActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification.util;
+package com.decimalab.sff.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,4 +1,4 @@
-package com.example.firebasephoneverification;
+package com.decimalab.sff;
 
 import org.junit.Test;
 
