@@ -210,7 +210,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
 
-                        Intent intent = new Intent(VerifyPhoneActivity.this, ProfileActivity.class);
+                        Intent intent = new Intent(VerifyPhoneActivity.this, DashboardActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }

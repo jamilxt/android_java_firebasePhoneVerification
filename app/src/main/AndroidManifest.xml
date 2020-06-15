@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="com.decimalab.sff.ui.VerifyPhoneActivity" />
         <activity android:name="com.decimalab.sff.ui.ProfileActivity" />
+        <activity android:name="com.decimalab.sff.ui.DashboardActivity" />
     </application>
 
 </manifest>
