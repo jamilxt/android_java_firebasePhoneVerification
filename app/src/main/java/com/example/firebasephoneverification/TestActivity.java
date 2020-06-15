@@ -274,7 +274,6 @@ public class TestActivity extends AppCompatActivity {
                             et_group.setText(String.valueOf(studentResponse.getData().getGroup()));
                             et_quotes.setText(String.valueOf(studentResponse.getData().getQuotes()));
                             et_payment_type.setText(String.valueOf(studentResponse.getData().getPaymentType()));
-
                             et_txr_id.setText(String.valueOf(studentResponse.getData().getTxrId()));
                             et_amount.setText(String.valueOf(studentResponse.getData().getAmount()));
                         }
@@ -303,6 +302,7 @@ public class TestActivity extends AppCompatActivity {
         studentRequest.setBoard(et_board.getText().toString());
         studentRequest.setPassingYear(Long.valueOf(et_passing_year.getText().toString()));
         studentRequest.setGroup(et_group.getText().toString());
+        studentRequest.setQuotes(et_quotes.getText().toString());
         studentRequest.setPaymentType(et_payment_type.getText().toString());
         studentRequest.setTxrId(et_txr_id.getText().toString());
         studentRequest.setAmount(et_amount.getText().toString());

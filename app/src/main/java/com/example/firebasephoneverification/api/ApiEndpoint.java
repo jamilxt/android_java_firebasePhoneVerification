@@ -26,7 +26,6 @@ public interface ApiEndpoint {
     @GET("user")
     Observable<StudentResponse> getLoggedInUserInfo(@Header("Authorization") String token);
 
-    @Headers("Content-Type: application/json")
     @PUT("user")
     Observable<StudentResponse> updateLoggedInUserInfo(@Header("Authorization") String token, @Body StudentRequest studentRequest);
 }
