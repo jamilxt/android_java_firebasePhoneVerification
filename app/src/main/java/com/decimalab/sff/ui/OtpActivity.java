@@ -11,7 +11,7 @@ import com.decimalab.sff.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class OtpActivity extends AppCompatActivity {
 
     TextInputEditText editTextCountryCode, editTextPhone;
     AppCompatButton buttonContinue;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_otp);
 
         editTextCountryCode = findViewById(R.id.editTextCountryCode);
         editTextPhone = findViewById(R.id.editTextPhone);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String phoneNumber = code + number;
 
-                Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
+                Intent intent = new Intent(OtpActivity.this, VerifyPhoneActivity.class);
                 intent.putExtra("phoneNumber", phoneNumber);
                 startActivity(intent);
 

@@ -15,4 +15,9 @@ public class SharedPrefUtils {
         SharedPreferences currPrefs = mContext.getSharedPreferences(Constants.LOGIN_SHARED_PREFERENCE, MODE_PRIVATE);
         return currPrefs.getString("phone", "");
     }
+
+    public static String getIsUserExist(Context mContext) {
+        SharedPreferences currPrefs = mContext.getSharedPreferences(Constants.LOGIN_SHARED_PREFERENCE, MODE_PRIVATE);
+        return currPrefs.getString("exist", "");
+    }
 }

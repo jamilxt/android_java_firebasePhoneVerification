@@ -14,7 +14,7 @@
         <activity android:name="com.decimalab.sff.TestActivity">
 
         </activity>
-        <activity android:name="com.decimalab.sff.ui.MainActivity">
+        <activity android:name="com.decimalab.sff.ui.OtpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
