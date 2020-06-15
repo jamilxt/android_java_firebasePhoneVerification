@@ -65,7 +65,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             super.onCodeSent(s, forceResendingToken);
             verificationId = s;
             mResendToken = forceResendingToken;
-            Toast.makeText(VerifyPhoneActivity.this, "Verification code sent!", Toast.LENGTH_LONG).show();
+            Toast.makeText(VerifyPhoneActivity.this, "Verification code sent!", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -84,17 +84,16 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 //verifying the code like in normal flow
                 editText.setText(code);
                 verifyCode(code);
-                Toast.makeText(VerifyPhoneActivity.this, "Verification success!", Toast.LENGTH_LONG).show();
+                Toast.makeText(VerifyPhoneActivity.this, "Verification success!", Toast.LENGTH_SHORT).show();
             } else {
                 // you dont get any code, it is instant verification
-                Toast.makeText(VerifyPhoneActivity.this, "Doing Instant Verification without sending code!", Toast.LENGTH_LONG).show();
                 signInWithCredential(phoneAuthCredential);
             }
         }
 
         @Override
         public void onVerificationFailed(FirebaseException e) {
-            Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Log.e("VerificationActivity", e.getLocalizedMessage());
             progressBar.setVisibility(View.GONE);
         }
     };
@@ -179,7 +178,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 .subscribe(new Observer<BaseResponse>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        Toast.makeText(VerifyPhoneActivity.this, "Verifying...", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -209,6 +208,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete() {
+
+                        Toast.makeText(VerifyPhoneActivity.this, "Login success!", Toast.LENGTH_SHORT).show();
+
 
                         Intent intent = new Intent(VerifyPhoneActivity.this, DashboardActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

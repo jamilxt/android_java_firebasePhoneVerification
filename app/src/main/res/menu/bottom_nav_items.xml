@@ -9,4 +9,5 @@
         android:id="@+id/payment"
         android:icon="@drawable/ic_money"
         android:title="Payment" />
+
 </menu>

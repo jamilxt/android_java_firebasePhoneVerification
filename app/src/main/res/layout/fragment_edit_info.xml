@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.InfoFragment">
+    tools:context=".fragment.EditInfoFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -17,11 +17,11 @@
         android:scrollingCache="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,27 +44,39 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profile Information"
+                    android:text="Edit Information"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_80" />
 
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
+            <ProgressBar
+                android:id="@+id/loadingInfo"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_middle"
+                android:indeterminate="true" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="1dp"
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/userForm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <EditText
+                        android:id="@+id/name"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
@@ -80,6 +92,31 @@
                         android:background="@color/grey_5" />
 
                     <EditText
+                        android:id="@+id/phone"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:hint="Phone"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_large"
+                        android:paddingRight="@dimen/spacing_large" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_5" />
+
+                    <EditText
+                        android:id="@+id/picture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="picture"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/roll"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
@@ -95,6 +132,7 @@
                         android:background="@color/grey_5" />
 
                     <EditText
+                        android:id="@+id/reg"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
@@ -110,14 +148,13 @@
                         android:background="@color/grey_5" />
 
                     <EditText
-                        android:id="@+id/et_group"
+                        android:id="@+id/group"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
                         android:background="@android:color/transparent"
                         android:drawableEnd="@drawable/ic_arrow_drop_grey"
                         android:drawableRight="@drawable/ic_arrow_drop_grey"
-                        android:editable="false"
                         android:focusable="false"
                         android:hint="Group"
                         android:minHeight="@dimen/spacing_xmlarge"
@@ -130,14 +167,13 @@
                         android:background="@color/grey_5" />
 
                     <EditText
-                        android:id="@+id/et_board"
+                        android:id="@+id/board"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
                         android:background="@android:color/transparent"
                         android:drawableEnd="@drawable/ic_arrow_drop_grey"
                         android:drawableRight="@drawable/ic_arrow_drop_grey"
-                        android:editable="false"
                         android:focusable="false"
                         android:hint="Board"
                         android:minHeight="@dimen/spacing_xmlarge"
@@ -151,14 +187,13 @@
 
 
                     <EditText
-                        android:id="@+id/et_pass_year"
+                        android:id="@+id/passing_year"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
                         android:background="@android:color/transparent"
                         android:drawableEnd="@drawable/ic_arrow_drop_grey"
                         android:drawableRight="@drawable/ic_arrow_drop_grey"
-                        android:editable="false"
                         android:focusable="false"
                         android:hint="Pass Year"
                         android:minHeight="@dimen/spacing_xmlarge"
@@ -171,6 +206,7 @@
                         android:background="@color/grey_5" />
 
                     <EditText
+                        android:id="@+id/quotes"
                         style="@style/EditText.Flat.Grey"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_xxlarge"
@@ -185,7 +221,94 @@
                         android:layout_height="1dp"
                         android:background="@color/grey_5" />
 
+                    <com.androidbuts.multispinnerfilter.MultiSpinnerSearch
+                        android:visibility="gone"
+                        android:id="@+id/colleges"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingTop="12dp"
+                        android:paddingEnd="4dp"
+                        android:paddingBottom="12dp"
+                        app:hintText="Select College" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_5" />
+
+                    <EditText
+                        android:id="@+id/college_ids"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="college_ids"
+                        android:visibility="gone" />
+
+
+                    <EditText
+                        android:id="@+id/payment_type"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:background="@android:color/transparent"
+                        android:enabled="false"
+                        android:visibility="gone"
+                        android:hint="Payment Type"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_large"
+                        android:paddingRight="@dimen/spacing_large"
+                        android:text="BKash" />
+
+                    <View
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_5" />
+
+                    <EditText
+                        android:visibility="gone"
+
+                        android:id="@+id/txr_id"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:background="@android:color/transparent"
+                        android:hint="Trx ID"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_large"
+                        android:paddingRight="@dimen/spacing_large" />
+
+                    <View
+                        android:visibility="gone"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_5" />
+
+
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/amount"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xxlarge"
+                        android:background="@android:color/transparent"
+                        android:hint="Amount"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_large"
+                        android:paddingRight="@dimen/spacing_large" />
+
+                    <View
+                        android:visibility="gone"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_5" />
+
                     <TextView
+                        android:visibility="gone"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -193,6 +316,7 @@
                         android:text="Upload First Page of Admit Card :"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                         android:textColor="@color/grey_40" />
+
 
                     <LinearLayout
                         android:id="@+id/admit_image_upload"
@@ -202,39 +326,39 @@
                         android:background="@drawable/edit_text_round_bg_outline"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:padding="@dimen/spacing_large"
-                        android:clickable="true">
+                        android:padding="@dimen/spacing_large">
+
 
                         <RelativeLayout
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:background="@color/grey_3">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/black">
 
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
+                                android:id="@+id/selected_admit_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
                                 android:layout_centerInParent="true"
-                                android:tint="@color/grey_20"
                                 app:srcCompat="@drawable/ic_photo" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_centerInParent="true"
+                                android:background="#3C000000"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="Click to Upload Admit Card"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="@android:color/white" />
 
                         </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Upload Admit Card Photo"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/grey_40" />
 
                     </LinearLayout>
 
 
-
-
                 </LinearLayout>
-
-
 
 
             </androidx.cardview.widget.CardView>
@@ -245,23 +369,22 @@
     </androidx.core.widget.NestedScrollView>
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image">
+        android:layout_height="wrap_content">
 
 
     </ImageView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_info_save"
-        android:layout_width="191dp"
+        android:id="@+id/save_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:borderWidth="0dp"
         app:srcCompat="@drawable/ic_save" />
-
 
 </FrameLayout>

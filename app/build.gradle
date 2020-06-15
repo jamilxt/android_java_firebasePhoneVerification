@@ -8,6 +8,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -44,6 +45,7 @@ dependencies {
     implementation 'com.github.pratikbutani:MultiSelectSpinner:-SNAPSHOT'
     final imagePickerVersion = '2.3.1'
     implementation "com.github.esafirm.android-image-picker:imagepicker:${imagePickerVersion}"
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
 

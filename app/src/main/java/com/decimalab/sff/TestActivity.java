@@ -214,40 +214,6 @@ public class TestActivity extends AppCompatActivity {
                 });
     }
 
-//    public void getCollegeListByDivision(View view) {
-//        getCollegeListByDivisionId(2);
-//    }
-
-//    private void getCollegeListByDivisionId(long division_id) {
-//        API.getCollegeListByDivisionId("Bearer " + token, division_id)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Observer<CollegeResponse>() {
-//                    @Override
-//                    public void onSubscribe(Disposable d) {
-//                        Toast.makeText(TestActivity.this, "Processing...", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onNext(CollegeResponse collegeResponse) {
-//                        Log.e("response", collegeResponse.toString());
-//                        jsonRecyclerView.bindJson(gson.toJson(collegeResponse));
-//
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        Toast.makeText(TestActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//                        Toast.makeText(TestActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//    }
-
     public void getLoggedInUserInfo(View view) {
         API.getLoggedInUserInfo("Bearer " + token)
                 .subscribeOn(Schedulers.io())

@@ -33,41 +33,21 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
 
-        btnLogOut = findViewById(R.id.buttonLogout);
-
-
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                logOut();
-            }
-        });
-
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_menus);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
         boolean isUserExist = Constants.isUserExist;
         if (isUserExist) {
-            Toast.makeText(this, "Old User", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Old User", Toast.LENGTH_LONG).show();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InfoFragment()).commit();
         } else {
-            Toast.makeText(this, "New User", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "New User", Toast.LENGTH_LONG).show();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditInfoFragment()).commit();
-            bottomNavigationView.getMenu().getItem(1).setEnabled(false);
+//            bottomNavigationView.getMenu().getItem(1).setEnabled(false);
         }
     }
 
-    private void logOut() {
 
-        FirebaseAuth.getInstance().signOut();
-
-        Intent intent = new Intent(this, OtpActivity.class);
-
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-
-    }
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

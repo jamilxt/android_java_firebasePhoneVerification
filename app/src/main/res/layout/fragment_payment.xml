@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PaymentFragment">
+    tools:context=".fragment.PaymentFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -194,10 +194,10 @@
         android:id="@+id/fab_pay_save"
         android:layout_width="191dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         app:borderWidth="0dp"
         app:srcCompat="@drawable/ic_send" />
 

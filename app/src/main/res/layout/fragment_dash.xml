@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DashFragment">
+    tools:context=".fragment.DashFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -303,10 +303,6 @@
                 </androidx.cardview.widget.CardView>
 
 
-
-
-
-
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
@@ -314,16 +310,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:paddingLeft="@dimen/spacing_large"
             android:paddingRight="@dimen/spacing_large"
             android:text="Applied College"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="15dp"
             app:layout_constraintBottom_toTopOf="@+id/rv_dash_colleges"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:gravity="center"
             app:layout_constraintTop_toBottomOf="@+id/nested_scroll_view"
-            android:textSize="15dp"
 
 
             />
